@@ -3,30 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styleGame.css">
 </head>
 <body>
-    <header> <h1>Rock   Paper   Scissors</h1> </header>
-    <div class = "choices">
-        <div class = "choice" id = "rock"><img src="rock.png"></div>
-        <div class = "choice" id = "paper"><img src="paper.png"></div>
-        <div class = "choice" id = "scissors"><img src="scissors.png"></div>
-    </div> 
-    <div class="score-board">
-        <div class="score">
-            <p id = "userScore">0</p>
-            <p>Your</p>
-        </div>
-        <div class="score">
-            <p id ="compScore">0</p>
-            <p>Comp</p>
+    <!-- Floating particles background -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <main class="game-container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="neon-title">
+                <span class="title-word">ROCK</span>
+                <span class="title-dot">•</span>
+                <span class="title-word">PAPER</span>
+                <span class="title-dot">•</span>
+                <span class="title-word">SCISSORS</span>
+            </h1>
+            <p class="subtitle">Choose your weapon</p>
+            <div class="level-indicator">
+                <span class="level-label">LEVEL</span>
+                <span class="level-number" id="currentLevel">1</span>
+                <span class="level-name" id="levelName">Beginner</span>
+            </div>
+        </header>
+
+        <!-- Battle Arena -->
+        <section class="battle-arena">
+            <div class="fighter fighter-player">
+                <div class="fighter-icon" id="playerChoice">
+                    <span>❓</span>
+                </div>
+                <p class="fighter-label">👤 YOU</p>
+            </div>
+            <div class="vs-badge">
+                <span>VS</span>
+            </div>
+            <div class="fighter fighter-computer">
+                <div class="fighter-icon" id="computerChoice">
+                    <span>❓</span>
+                </div>
+                <p class="fighter-label">🤖 COMP</p>
+            </div>
+        </section>
+
+        <!-- Choice Buttons -->
+        <section class="choices">
+            <button class="choice-btn" id="rock">
+                <div class="choice-icon">
+                    <img src="rock.png" alt="Rock">
+                </div>
+                <span class="choice-label">Rock</span>
+            </button>
+            <button class="choice-btn" id="paper">
+                <div class="choice-icon">
+                    <img src="paper.png" alt="Paper">
+                </div>
+                <span class="choice-label">Paper</span>
+            </button>
+            <button class="choice-btn" id="scissors">
+                <div class="choice-icon">
+                    <img src="scissors.png" alt="Scissors">
+                </div>
+                <span class="choice-label">Scissors</span>
+            </button>
+        </section>
+
+        <!-- Score Board -->
+        <section class="score-board">
+            <div class="score-card score-player">
+                <p class="score-label">YOUR SCORE</p>
+                <p class="score-value" id="userScore">0</p>
+            </div>
+            <div class="score-divider">
+                <span>:</span>
+            </div>
+            <div class="score-card score-computer">
+                <p class="score-label">COMP SCORE</p>
+                <p class="score-value" id="compScore">0</p>
+            </div>
+        </section>
+
+        <!-- Message -->
+        <div class="message-container">
+            <p id="msg" class="message">Play your move! 🎮</p>
         </div>
 
-    </div>   
-    <div class ="container">
-        <p id = "msg">play your move</p>
-    </div>
- <script src="gaming.js"></script>   
+        <!-- Level Progress -->
+        <section class="level-progress">
+            <div class="progress-info">
+                <span class="progress-label">Level Progress</span>
+                <span class="progress-stats">
+                    <span class="wins">Wins: <span id="levelWins">0</span></span>
+                    <span class="losses">Losses: <span id="levelLosses">0</span></span>
+                </span>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+            <p class="progress-target" id="progressTarget">Win 3 more to level up!</p>
+        </section>
+
+        <!-- Round Info & Reset -->
+        <section class="game-controls">
+            <div class="round-info">
+                <span class="round-label">Round: <span id="roundNum">0</span></span>
+                <div class="round-history" id="roundHistory"></div>
+            </div>
+            <button class="reset-btn" id="resetBtn">
+                <span class="reset-icon">↻</span> Reset Game
+            </button>
+        </section>
+    </main>
+
+    <script src="gaming.js"></script>
 </body>
 </html>

@@ -1,0 +1,21 @@
+{
+  "name": "mern-practices",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Dom.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riyasur1234/MERN-PRACTICES.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/riyasur1234/MERN-PRACTICES/issues"
+  },
+  "homepage": "https://github.com/riyasur1234/MERN-PRACTICES#readme"
+}
